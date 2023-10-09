@@ -97,14 +97,14 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  setTimer1(50);
+  setTimer1(25);
   setTimer2(100);
   while (1)
   {
 	  if(timer1_flag == 1){
 		  update7SEG(index++);
 		  if(index > 3) index = 0;
-		  setTimer1(50);
+		  setTimer1(25);
 	  }
 	  if(timer2_flag == 1){
 		  setTimer2(100);

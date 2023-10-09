@@ -576,8 +576,8 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  setTimer1(50);
- 80004d0:	2032      	movs	r0, #50	; 0x32
+  setTimer1(25);
+ 80004d0:	2019      	movs	r0, #25
  80004d2:	f000 f9a5 	bl	8000820 <setTimer1>
   setTimer2(100);
  80004d6:	2064      	movs	r0, #100	; 0x64
@@ -601,8 +601,8 @@ int main(void)
  80004f4:	dd01      	ble.n	80004fa <main+0x4a>
  80004f6:	2300      	movs	r3, #0
  80004f8:	607b      	str	r3, [r7, #4]
-		  setTimer1(50);
- 80004fa:	2032      	movs	r0, #50	; 0x32
+		  setTimer1(25);
+ 80004fa:	2019      	movs	r0, #25
  80004fc:	f000 f990 	bl	8000820 <setTimer1>
 	  }
 	  if(timer2_flag == 1){
