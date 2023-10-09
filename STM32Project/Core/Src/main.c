@@ -57,6 +57,7 @@ static void MX_TIM2_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+void updateClockBuffer(int hour, int min);
 void update7SEG(int index);
 /* USER CODE END 0 */
 
@@ -77,7 +78,8 @@ int main(void)
 
   /* USER CODE BEGIN Init */
   int index = 0;
-
+  int counter = 0;
+  int hour = 15, min = 8, sec = 50;
   /* USER CODE END Init */
 
   /* Configure the system clock */
@@ -98,18 +100,32 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   setTimer1(25);
-  setTimer2(100);
+  //setTimer2(100);
+  updateClockBuffer(hour, min);
   while (1)
   {
 	  if(timer1_flag == 1){
+		  if(counter > 3){
+			  sec++;
+			  if (sec >= 60){
+				  sec = 0;
+				  min++;
+			  }
+			  if(min >= 60){
+				  min = 0;
+				  hour++;
+			  }
+			  if(hour >=24){
+				  hour = 0;
+			  }
+			  updateClockBuffer(hour, min);
+			  HAL_GPIO_TogglePin(DOT_GPIO_Port, DOT_Pin);
+			  counter = 0;
+		  }
+		  counter++;
 		  update7SEG(index++);
 		  if(index > 3) index = 0;
 		  setTimer1(25);
-	  }
-	  if(timer2_flag == 1){
-		  setTimer2(100);
-		  HAL_GPIO_TogglePin(LED_RED_GPIO_Port, LED_RED_Pin);
-		  HAL_GPIO_TogglePin(DOT_GPIO_Port, DOT_Pin);
 	  }
     /* USER CODE END WHILE */
 
@@ -242,6 +258,15 @@ static void MX_GPIO_Init(void)
 /* USER CODE BEGIN 4 */
 const int MAX_LED = 4;
 int led_buffer[4] = {1, 2, 3, 4};
+
+void updateClockBuffer(int hour, int min){
+	if(hour < 24 && hour >= 0 && min < 60 && min >= 0){
+		led_buffer[0] = hour / 10;
+		led_buffer[1] = hour % 10;
+		led_buffer[2] = min / 10;
+		led_buffer[3] = min % 10;
+	}
+}
 void update7SEG(int index){
     switch (index){
         case 0:
