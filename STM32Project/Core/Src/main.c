@@ -99,26 +99,29 @@ int main(void)
   setTimer1(50);
   while (1)
   {
-	  if(timer1_flag == 1){
-		  setTimer1(50);
-		  switch (state){
-		  case 1:
-			  HAL_GPIO_WritePin(EN0_GPIO_Port, EN0_Pin, 0);
-			  HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin, 1);
-			  HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, 0);
-			  display7SEG(1);
+ 	  switch (state){
+	  case 1:
+		  HAL_GPIO_WritePin(EN0_GPIO_Port, EN0_Pin, 0);
+		  HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin, 1);
+		  HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, 0);
+		  display7SEG(1);
+		  if(timer1_flag == 1){
 			  state = 2;
-			  break;
-		  case 2:
-			  HAL_GPIO_WritePin(EN0_GPIO_Port, EN0_Pin, 1);
-			  HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin, 0);
-			  HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, 1);
-			  display7SEG(2);
-			  state = 1;
-			  break;
-		  default:
-			  break;
+			  setTimer1(50);
 		  }
+		  break;
+	  case 2:
+		  HAL_GPIO_WritePin(EN0_GPIO_Port, EN0_Pin, 1);
+		  HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin, 0);
+		  HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, 1);
+		  display7SEG(2);
+		  if(timer1_flag == 1){
+			  state = 1;
+			  setTimer1(50);
+		  }
+		  break;
+	  default:
+		  break;
 	  }
     /* USER CODE END WHILE */
 
