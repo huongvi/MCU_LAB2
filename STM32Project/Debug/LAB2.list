@@ -1331,7 +1331,7 @@ void update7SEG(int index){
 080009c0 <updateLEDMatrix>:
 
 const int MAX_LED_MATRIX = 8;
-uint8_t matrix_buffer[8] = {0x18, 0x3c, 0x42, 0xc3, 0xff, 0xff, 0xc3, 0xc3};
+uint8_t matrix_buffer[8] = {0x07, 0x03, 0xcd, 0xcc, 0xcc, 0xcd, 0x03, 0x07};
 void updateLEDMatrix(int index){
  80009c0:	b580      	push	{r7, lr}
  80009c2:	b082      	sub	sp, #8
@@ -1353,43 +1353,43 @@ void updateLEDMatrix(int index){
  80009f4:	08000cc3 	.word	0x08000cc3
     switch (index){
         case 0:
-        	HAL_GPIO_WritePin(ENM0_GPIO_Port, ENM0_Pin, 1);
- 80009f8:	2201      	movs	r2, #1
+        	HAL_GPIO_WritePin(ENM0_GPIO_Port, ENM0_Pin, 0);
+ 80009f8:	2200      	movs	r2, #0
  80009fa:	2104      	movs	r1, #4
  80009fc:	48cd      	ldr	r0, [pc, #820]	; (8000d34 <updateLEDMatrix+0x374>)
  80009fe:	f000 fda1 	bl	8001544 <HAL_GPIO_WritePin>
-        	HAL_GPIO_WritePin(ENM1_GPIO_Port, ENM1_Pin, 0);
- 8000a02:	2200      	movs	r2, #0
+        	HAL_GPIO_WritePin(ENM1_GPIO_Port, ENM1_Pin, 1);
+ 8000a02:	2201      	movs	r2, #1
  8000a04:	2108      	movs	r1, #8
  8000a06:	48cb      	ldr	r0, [pc, #812]	; (8000d34 <updateLEDMatrix+0x374>)
  8000a08:	f000 fd9c 	bl	8001544 <HAL_GPIO_WritePin>
-        	HAL_GPIO_WritePin(ENM2_GPIO_Port, ENM2_Pin, 0);
- 8000a0c:	2200      	movs	r2, #0
+        	HAL_GPIO_WritePin(ENM2_GPIO_Port, ENM2_Pin, 1);
+ 8000a0c:	2201      	movs	r2, #1
  8000a0e:	f44f 6180 	mov.w	r1, #1024	; 0x400
  8000a12:	48c8      	ldr	r0, [pc, #800]	; (8000d34 <updateLEDMatrix+0x374>)
  8000a14:	f000 fd96 	bl	8001544 <HAL_GPIO_WritePin>
-        	HAL_GPIO_WritePin(ENM3_GPIO_Port, ENM3_Pin, 0);
- 8000a18:	2200      	movs	r2, #0
+        	HAL_GPIO_WritePin(ENM3_GPIO_Port, ENM3_Pin, 1);
+ 8000a18:	2201      	movs	r2, #1
  8000a1a:	f44f 6100 	mov.w	r1, #2048	; 0x800
  8000a1e:	48c5      	ldr	r0, [pc, #788]	; (8000d34 <updateLEDMatrix+0x374>)
  8000a20:	f000 fd90 	bl	8001544 <HAL_GPIO_WritePin>
-        	HAL_GPIO_WritePin(ENM4_GPIO_Port, ENM4_Pin, 0);
- 8000a24:	2200      	movs	r2, #0
+        	HAL_GPIO_WritePin(ENM4_GPIO_Port, ENM4_Pin, 1);
+ 8000a24:	2201      	movs	r2, #1
  8000a26:	f44f 5180 	mov.w	r1, #4096	; 0x1000
  8000a2a:	48c2      	ldr	r0, [pc, #776]	; (8000d34 <updateLEDMatrix+0x374>)
  8000a2c:	f000 fd8a 	bl	8001544 <HAL_GPIO_WritePin>
-        	HAL_GPIO_WritePin(ENM5_GPIO_Port, ENM5_Pin, 0);
- 8000a30:	2200      	movs	r2, #0
+        	HAL_GPIO_WritePin(ENM5_GPIO_Port, ENM5_Pin, 1);
+ 8000a30:	2201      	movs	r2, #1
  8000a32:	f44f 5100 	mov.w	r1, #8192	; 0x2000
  8000a36:	48bf      	ldr	r0, [pc, #764]	; (8000d34 <updateLEDMatrix+0x374>)
  8000a38:	f000 fd84 	bl	8001544 <HAL_GPIO_WritePin>
-        	HAL_GPIO_WritePin(ENM6_GPIO_Port, ENM6_Pin, 0);
- 8000a3c:	2200      	movs	r2, #0
+        	HAL_GPIO_WritePin(ENM6_GPIO_Port, ENM6_Pin, 1);
+ 8000a3c:	2201      	movs	r2, #1
  8000a3e:	f44f 4180 	mov.w	r1, #16384	; 0x4000
  8000a42:	48bc      	ldr	r0, [pc, #752]	; (8000d34 <updateLEDMatrix+0x374>)
  8000a44:	f000 fd7e 	bl	8001544 <HAL_GPIO_WritePin>
-        	HAL_GPIO_WritePin(ENM7_GPIO_Port, ENM7_Pin, 0);
- 8000a48:	2200      	movs	r2, #0
+        	HAL_GPIO_WritePin(ENM7_GPIO_Port, ENM7_Pin, 1);
+ 8000a48:	2201      	movs	r2, #1
  8000a4a:	2102      	movs	r1, #2
  8000a4c:	48b9      	ldr	r0, [pc, #740]	; (8000d34 <updateLEDMatrix+0x374>)
  8000a4e:	f000 fd79 	bl	8001544 <HAL_GPIO_WritePin>
@@ -1401,43 +1401,43 @@ void updateLEDMatrix(int index){
             break;
  8000a5c:	e165      	b.n	8000d2a <updateLEDMatrix+0x36a>
         case 1:
-        	HAL_GPIO_WritePin(ENM0_GPIO_Port, ENM0_Pin, 0);
- 8000a5e:	2200      	movs	r2, #0
+        	HAL_GPIO_WritePin(ENM0_GPIO_Port, ENM0_Pin, 1);
+ 8000a5e:	2201      	movs	r2, #1
  8000a60:	2104      	movs	r1, #4
  8000a62:	48b4      	ldr	r0, [pc, #720]	; (8000d34 <updateLEDMatrix+0x374>)
  8000a64:	f000 fd6e 	bl	8001544 <HAL_GPIO_WritePin>
-        	HAL_GPIO_WritePin(ENM1_GPIO_Port, ENM1_Pin, 1);
- 8000a68:	2201      	movs	r2, #1
+        	HAL_GPIO_WritePin(ENM1_GPIO_Port, ENM1_Pin, 0);
+ 8000a68:	2200      	movs	r2, #0
  8000a6a:	2108      	movs	r1, #8
  8000a6c:	48b1      	ldr	r0, [pc, #708]	; (8000d34 <updateLEDMatrix+0x374>)
  8000a6e:	f000 fd69 	bl	8001544 <HAL_GPIO_WritePin>
-        	HAL_GPIO_WritePin(ENM2_GPIO_Port, ENM2_Pin, 0);
- 8000a72:	2200      	movs	r2, #0
+        	HAL_GPIO_WritePin(ENM2_GPIO_Port, ENM2_Pin, 1);
+ 8000a72:	2201      	movs	r2, #1
  8000a74:	f44f 6180 	mov.w	r1, #1024	; 0x400
  8000a78:	48ae      	ldr	r0, [pc, #696]	; (8000d34 <updateLEDMatrix+0x374>)
  8000a7a:	f000 fd63 	bl	8001544 <HAL_GPIO_WritePin>
-        	HAL_GPIO_WritePin(ENM3_GPIO_Port, ENM3_Pin, 0);
- 8000a7e:	2200      	movs	r2, #0
+        	HAL_GPIO_WritePin(ENM3_GPIO_Port, ENM3_Pin, 1);
+ 8000a7e:	2201      	movs	r2, #1
  8000a80:	f44f 6100 	mov.w	r1, #2048	; 0x800
  8000a84:	48ab      	ldr	r0, [pc, #684]	; (8000d34 <updateLEDMatrix+0x374>)
  8000a86:	f000 fd5d 	bl	8001544 <HAL_GPIO_WritePin>
-        	HAL_GPIO_WritePin(ENM4_GPIO_Port, ENM4_Pin, 0);
- 8000a8a:	2200      	movs	r2, #0
+        	HAL_GPIO_WritePin(ENM4_GPIO_Port, ENM4_Pin, 1);
+ 8000a8a:	2201      	movs	r2, #1
  8000a8c:	f44f 5180 	mov.w	r1, #4096	; 0x1000
  8000a90:	48a8      	ldr	r0, [pc, #672]	; (8000d34 <updateLEDMatrix+0x374>)
  8000a92:	f000 fd57 	bl	8001544 <HAL_GPIO_WritePin>
-        	HAL_GPIO_WritePin(ENM5_GPIO_Port, ENM5_Pin, 0);
- 8000a96:	2200      	movs	r2, #0
+        	HAL_GPIO_WritePin(ENM5_GPIO_Port, ENM5_Pin, 1);
+ 8000a96:	2201      	movs	r2, #1
  8000a98:	f44f 5100 	mov.w	r1, #8192	; 0x2000
  8000a9c:	48a5      	ldr	r0, [pc, #660]	; (8000d34 <updateLEDMatrix+0x374>)
  8000a9e:	f000 fd51 	bl	8001544 <HAL_GPIO_WritePin>
-        	HAL_GPIO_WritePin(ENM6_GPIO_Port, ENM6_Pin, 0);
- 8000aa2:	2200      	movs	r2, #0
+        	HAL_GPIO_WritePin(ENM6_GPIO_Port, ENM6_Pin, 1);
+ 8000aa2:	2201      	movs	r2, #1
  8000aa4:	f44f 4180 	mov.w	r1, #16384	; 0x4000
  8000aa8:	48a2      	ldr	r0, [pc, #648]	; (8000d34 <updateLEDMatrix+0x374>)
  8000aaa:	f000 fd4b 	bl	8001544 <HAL_GPIO_WritePin>
-        	HAL_GPIO_WritePin(ENM7_GPIO_Port, ENM7_Pin, 0);
- 8000aae:	2200      	movs	r2, #0
+        	HAL_GPIO_WritePin(ENM7_GPIO_Port, ENM7_Pin, 1);
+ 8000aae:	2201      	movs	r2, #1
  8000ab0:	2102      	movs	r1, #2
  8000ab2:	48a0      	ldr	r0, [pc, #640]	; (8000d34 <updateLEDMatrix+0x374>)
  8000ab4:	f000 fd46 	bl	8001544 <HAL_GPIO_WritePin>
@@ -1449,43 +1449,43 @@ void updateLEDMatrix(int index){
             break;
  8000ac2:	e132      	b.n	8000d2a <updateLEDMatrix+0x36a>
         case 2:
-        	HAL_GPIO_WritePin(ENM0_GPIO_Port, ENM0_Pin, 0);
- 8000ac4:	2200      	movs	r2, #0
+        	HAL_GPIO_WritePin(ENM0_GPIO_Port, ENM0_Pin, 1);
+ 8000ac4:	2201      	movs	r2, #1
  8000ac6:	2104      	movs	r1, #4
  8000ac8:	489a      	ldr	r0, [pc, #616]	; (8000d34 <updateLEDMatrix+0x374>)
  8000aca:	f000 fd3b 	bl	8001544 <HAL_GPIO_WritePin>
-        	HAL_GPIO_WritePin(ENM1_GPIO_Port, ENM1_Pin, 0);
- 8000ace:	2200      	movs	r2, #0
+        	HAL_GPIO_WritePin(ENM1_GPIO_Port, ENM1_Pin, 1);
+ 8000ace:	2201      	movs	r2, #1
  8000ad0:	2108      	movs	r1, #8
  8000ad2:	4898      	ldr	r0, [pc, #608]	; (8000d34 <updateLEDMatrix+0x374>)
  8000ad4:	f000 fd36 	bl	8001544 <HAL_GPIO_WritePin>
-        	HAL_GPIO_WritePin(ENM2_GPIO_Port, ENM2_Pin, 1);
- 8000ad8:	2201      	movs	r2, #1
+        	HAL_GPIO_WritePin(ENM2_GPIO_Port, ENM2_Pin, 0);
+ 8000ad8:	2200      	movs	r2, #0
  8000ada:	f44f 6180 	mov.w	r1, #1024	; 0x400
  8000ade:	4895      	ldr	r0, [pc, #596]	; (8000d34 <updateLEDMatrix+0x374>)
  8000ae0:	f000 fd30 	bl	8001544 <HAL_GPIO_WritePin>
-        	HAL_GPIO_WritePin(ENM3_GPIO_Port, ENM3_Pin, 0);
- 8000ae4:	2200      	movs	r2, #0
+        	HAL_GPIO_WritePin(ENM3_GPIO_Port, ENM3_Pin, 1);
+ 8000ae4:	2201      	movs	r2, #1
  8000ae6:	f44f 6100 	mov.w	r1, #2048	; 0x800
  8000aea:	4892      	ldr	r0, [pc, #584]	; (8000d34 <updateLEDMatrix+0x374>)
  8000aec:	f000 fd2a 	bl	8001544 <HAL_GPIO_WritePin>
-        	HAL_GPIO_WritePin(ENM4_GPIO_Port, ENM4_Pin, 0);
- 8000af0:	2200      	movs	r2, #0
+        	HAL_GPIO_WritePin(ENM4_GPIO_Port, ENM4_Pin, 1);
+ 8000af0:	2201      	movs	r2, #1
  8000af2:	f44f 5180 	mov.w	r1, #4096	; 0x1000
  8000af6:	488f      	ldr	r0, [pc, #572]	; (8000d34 <updateLEDMatrix+0x374>)
  8000af8:	f000 fd24 	bl	8001544 <HAL_GPIO_WritePin>
-        	HAL_GPIO_WritePin(ENM5_GPIO_Port, ENM5_Pin, 0);
- 8000afc:	2200      	movs	r2, #0
+        	HAL_GPIO_WritePin(ENM5_GPIO_Port, ENM5_Pin, 1);
+ 8000afc:	2201      	movs	r2, #1
  8000afe:	f44f 5100 	mov.w	r1, #8192	; 0x2000
  8000b02:	488c      	ldr	r0, [pc, #560]	; (8000d34 <updateLEDMatrix+0x374>)
  8000b04:	f000 fd1e 	bl	8001544 <HAL_GPIO_WritePin>
-        	HAL_GPIO_WritePin(ENM6_GPIO_Port, ENM6_Pin, 0);
- 8000b08:	2200      	movs	r2, #0
+        	HAL_GPIO_WritePin(ENM6_GPIO_Port, ENM6_Pin, 1);
+ 8000b08:	2201      	movs	r2, #1
  8000b0a:	f44f 4180 	mov.w	r1, #16384	; 0x4000
  8000b0e:	4889      	ldr	r0, [pc, #548]	; (8000d34 <updateLEDMatrix+0x374>)
  8000b10:	f000 fd18 	bl	8001544 <HAL_GPIO_WritePin>
-        	HAL_GPIO_WritePin(ENM7_GPIO_Port, ENM7_Pin, 0);
- 8000b14:	2200      	movs	r2, #0
+        	HAL_GPIO_WritePin(ENM7_GPIO_Port, ENM7_Pin, 1);
+ 8000b14:	2201      	movs	r2, #1
  8000b16:	2102      	movs	r1, #2
  8000b18:	4886      	ldr	r0, [pc, #536]	; (8000d34 <updateLEDMatrix+0x374>)
  8000b1a:	f000 fd13 	bl	8001544 <HAL_GPIO_WritePin>
@@ -1497,43 +1497,43 @@ void updateLEDMatrix(int index){
             break;
  8000b28:	e0ff      	b.n	8000d2a <updateLEDMatrix+0x36a>
         case 3:
-        	HAL_GPIO_WritePin(ENM0_GPIO_Port, ENM0_Pin, 0);
- 8000b2a:	2200      	movs	r2, #0
+        	HAL_GPIO_WritePin(ENM0_GPIO_Port, ENM0_Pin, 1);
+ 8000b2a:	2201      	movs	r2, #1
  8000b2c:	2104      	movs	r1, #4
  8000b2e:	4881      	ldr	r0, [pc, #516]	; (8000d34 <updateLEDMatrix+0x374>)
  8000b30:	f000 fd08 	bl	8001544 <HAL_GPIO_WritePin>
-        	HAL_GPIO_WritePin(ENM1_GPIO_Port, ENM1_Pin, 0);
- 8000b34:	2200      	movs	r2, #0
+        	HAL_GPIO_WritePin(ENM1_GPIO_Port, ENM1_Pin, 1);
+ 8000b34:	2201      	movs	r2, #1
  8000b36:	2108      	movs	r1, #8
  8000b38:	487e      	ldr	r0, [pc, #504]	; (8000d34 <updateLEDMatrix+0x374>)
  8000b3a:	f000 fd03 	bl	8001544 <HAL_GPIO_WritePin>
-        	HAL_GPIO_WritePin(ENM2_GPIO_Port, ENM2_Pin, 0);
- 8000b3e:	2200      	movs	r2, #0
+        	HAL_GPIO_WritePin(ENM2_GPIO_Port, ENM2_Pin, 1);
+ 8000b3e:	2201      	movs	r2, #1
  8000b40:	f44f 6180 	mov.w	r1, #1024	; 0x400
  8000b44:	487b      	ldr	r0, [pc, #492]	; (8000d34 <updateLEDMatrix+0x374>)
  8000b46:	f000 fcfd 	bl	8001544 <HAL_GPIO_WritePin>
-        	HAL_GPIO_WritePin(ENM3_GPIO_Port, ENM3_Pin, 1);
- 8000b4a:	2201      	movs	r2, #1
+        	HAL_GPIO_WritePin(ENM3_GPIO_Port, ENM3_Pin, 0);
+ 8000b4a:	2200      	movs	r2, #0
  8000b4c:	f44f 6100 	mov.w	r1, #2048	; 0x800
  8000b50:	4878      	ldr	r0, [pc, #480]	; (8000d34 <updateLEDMatrix+0x374>)
  8000b52:	f000 fcf7 	bl	8001544 <HAL_GPIO_WritePin>
-        	HAL_GPIO_WritePin(ENM4_GPIO_Port, ENM4_Pin, 0);
- 8000b56:	2200      	movs	r2, #0
+        	HAL_GPIO_WritePin(ENM4_GPIO_Port, ENM4_Pin, 1);
+ 8000b56:	2201      	movs	r2, #1
  8000b58:	f44f 5180 	mov.w	r1, #4096	; 0x1000
  8000b5c:	4875      	ldr	r0, [pc, #468]	; (8000d34 <updateLEDMatrix+0x374>)
  8000b5e:	f000 fcf1 	bl	8001544 <HAL_GPIO_WritePin>
-        	HAL_GPIO_WritePin(ENM5_GPIO_Port, ENM5_Pin, 0);
- 8000b62:	2200      	movs	r2, #0
+        	HAL_GPIO_WritePin(ENM5_GPIO_Port, ENM5_Pin, 1);
+ 8000b62:	2201      	movs	r2, #1
  8000b64:	f44f 5100 	mov.w	r1, #8192	; 0x2000
  8000b68:	4872      	ldr	r0, [pc, #456]	; (8000d34 <updateLEDMatrix+0x374>)
  8000b6a:	f000 fceb 	bl	8001544 <HAL_GPIO_WritePin>
-        	HAL_GPIO_WritePin(ENM6_GPIO_Port, ENM6_Pin, 0);
- 8000b6e:	2200      	movs	r2, #0
+        	HAL_GPIO_WritePin(ENM6_GPIO_Port, ENM6_Pin, 1);
+ 8000b6e:	2201      	movs	r2, #1
  8000b70:	f44f 4180 	mov.w	r1, #16384	; 0x4000
  8000b74:	486f      	ldr	r0, [pc, #444]	; (8000d34 <updateLEDMatrix+0x374>)
  8000b76:	f000 fce5 	bl	8001544 <HAL_GPIO_WritePin>
-        	HAL_GPIO_WritePin(ENM7_GPIO_Port, ENM7_Pin, 0);
- 8000b7a:	2200      	movs	r2, #0
+        	HAL_GPIO_WritePin(ENM7_GPIO_Port, ENM7_Pin, 1);
+ 8000b7a:	2201      	movs	r2, #1
  8000b7c:	2102      	movs	r1, #2
  8000b7e:	486d      	ldr	r0, [pc, #436]	; (8000d34 <updateLEDMatrix+0x374>)
  8000b80:	f000 fce0 	bl	8001544 <HAL_GPIO_WritePin>
@@ -1545,43 +1545,43 @@ void updateLEDMatrix(int index){
             break;
  8000b8e:	e0cc      	b.n	8000d2a <updateLEDMatrix+0x36a>
         case 4:
-        	HAL_GPIO_WritePin(ENM0_GPIO_Port, ENM0_Pin, 0);
- 8000b90:	2200      	movs	r2, #0
+        	HAL_GPIO_WritePin(ENM0_GPIO_Port, ENM0_Pin, 1);
+ 8000b90:	2201      	movs	r2, #1
  8000b92:	2104      	movs	r1, #4
  8000b94:	4867      	ldr	r0, [pc, #412]	; (8000d34 <updateLEDMatrix+0x374>)
  8000b96:	f000 fcd5 	bl	8001544 <HAL_GPIO_WritePin>
-        	HAL_GPIO_WritePin(ENM1_GPIO_Port, ENM1_Pin, 0);
- 8000b9a:	2200      	movs	r2, #0
+        	HAL_GPIO_WritePin(ENM1_GPIO_Port, ENM1_Pin, 1);
+ 8000b9a:	2201      	movs	r2, #1
  8000b9c:	2108      	movs	r1, #8
  8000b9e:	4865      	ldr	r0, [pc, #404]	; (8000d34 <updateLEDMatrix+0x374>)
  8000ba0:	f000 fcd0 	bl	8001544 <HAL_GPIO_WritePin>
-        	HAL_GPIO_WritePin(ENM2_GPIO_Port, ENM2_Pin, 0);
- 8000ba4:	2200      	movs	r2, #0
+        	HAL_GPIO_WritePin(ENM2_GPIO_Port, ENM2_Pin, 1);
+ 8000ba4:	2201      	movs	r2, #1
  8000ba6:	f44f 6180 	mov.w	r1, #1024	; 0x400
  8000baa:	4862      	ldr	r0, [pc, #392]	; (8000d34 <updateLEDMatrix+0x374>)
  8000bac:	f000 fcca 	bl	8001544 <HAL_GPIO_WritePin>
-        	HAL_GPIO_WritePin(ENM3_GPIO_Port, ENM3_Pin, 0);
- 8000bb0:	2200      	movs	r2, #0
+        	HAL_GPIO_WritePin(ENM3_GPIO_Port, ENM3_Pin, 1);
+ 8000bb0:	2201      	movs	r2, #1
  8000bb2:	f44f 6100 	mov.w	r1, #2048	; 0x800
  8000bb6:	485f      	ldr	r0, [pc, #380]	; (8000d34 <updateLEDMatrix+0x374>)
  8000bb8:	f000 fcc4 	bl	8001544 <HAL_GPIO_WritePin>
-        	HAL_GPIO_WritePin(ENM4_GPIO_Port, ENM4_Pin, 1);
- 8000bbc:	2201      	movs	r2, #1
+        	HAL_GPIO_WritePin(ENM4_GPIO_Port, ENM4_Pin, 0);
+ 8000bbc:	2200      	movs	r2, #0
  8000bbe:	f44f 5180 	mov.w	r1, #4096	; 0x1000
  8000bc2:	485c      	ldr	r0, [pc, #368]	; (8000d34 <updateLEDMatrix+0x374>)
  8000bc4:	f000 fcbe 	bl	8001544 <HAL_GPIO_WritePin>
-        	HAL_GPIO_WritePin(ENM5_GPIO_Port, ENM5_Pin, 0);
- 8000bc8:	2200      	movs	r2, #0
+        	HAL_GPIO_WritePin(ENM5_GPIO_Port, ENM5_Pin, 1);
+ 8000bc8:	2201      	movs	r2, #1
  8000bca:	f44f 5100 	mov.w	r1, #8192	; 0x2000
  8000bce:	4859      	ldr	r0, [pc, #356]	; (8000d34 <updateLEDMatrix+0x374>)
  8000bd0:	f000 fcb8 	bl	8001544 <HAL_GPIO_WritePin>
-        	HAL_GPIO_WritePin(ENM6_GPIO_Port, ENM6_Pin, 0);
- 8000bd4:	2200      	movs	r2, #0
+        	HAL_GPIO_WritePin(ENM6_GPIO_Port, ENM6_Pin, 1);
+ 8000bd4:	2201      	movs	r2, #1
  8000bd6:	f44f 4180 	mov.w	r1, #16384	; 0x4000
  8000bda:	4856      	ldr	r0, [pc, #344]	; (8000d34 <updateLEDMatrix+0x374>)
  8000bdc:	f000 fcb2 	bl	8001544 <HAL_GPIO_WritePin>
-        	HAL_GPIO_WritePin(ENM7_GPIO_Port, ENM7_Pin, 0);
- 8000be0:	2200      	movs	r2, #0
+        	HAL_GPIO_WritePin(ENM7_GPIO_Port, ENM7_Pin, 1);
+ 8000be0:	2201      	movs	r2, #1
  8000be2:	2102      	movs	r1, #2
  8000be4:	4853      	ldr	r0, [pc, #332]	; (8000d34 <updateLEDMatrix+0x374>)
  8000be6:	f000 fcad 	bl	8001544 <HAL_GPIO_WritePin>
@@ -1593,43 +1593,43 @@ void updateLEDMatrix(int index){
             break;
  8000bf4:	e099      	b.n	8000d2a <updateLEDMatrix+0x36a>
         case 5:
-        	HAL_GPIO_WritePin(ENM0_GPIO_Port, ENM0_Pin, 0);
- 8000bf6:	2200      	movs	r2, #0
+        	HAL_GPIO_WritePin(ENM0_GPIO_Port, ENM0_Pin, 1);
+ 8000bf6:	2201      	movs	r2, #1
  8000bf8:	2104      	movs	r1, #4
  8000bfa:	484e      	ldr	r0, [pc, #312]	; (8000d34 <updateLEDMatrix+0x374>)
  8000bfc:	f000 fca2 	bl	8001544 <HAL_GPIO_WritePin>
-        	HAL_GPIO_WritePin(ENM1_GPIO_Port, ENM1_Pin, 0);
- 8000c00:	2200      	movs	r2, #0
+        	HAL_GPIO_WritePin(ENM1_GPIO_Port, ENM1_Pin, 1);
+ 8000c00:	2201      	movs	r2, #1
  8000c02:	2108      	movs	r1, #8
  8000c04:	484b      	ldr	r0, [pc, #300]	; (8000d34 <updateLEDMatrix+0x374>)
  8000c06:	f000 fc9d 	bl	8001544 <HAL_GPIO_WritePin>
-        	HAL_GPIO_WritePin(ENM2_GPIO_Port, ENM2_Pin, 0);
- 8000c0a:	2200      	movs	r2, #0
+        	HAL_GPIO_WritePin(ENM2_GPIO_Port, ENM2_Pin, 1);
+ 8000c0a:	2201      	movs	r2, #1
  8000c0c:	f44f 6180 	mov.w	r1, #1024	; 0x400
  8000c10:	4848      	ldr	r0, [pc, #288]	; (8000d34 <updateLEDMatrix+0x374>)
  8000c12:	f000 fc97 	bl	8001544 <HAL_GPIO_WritePin>
-        	HAL_GPIO_WritePin(ENM3_GPIO_Port, ENM3_Pin, 0);
- 8000c16:	2200      	movs	r2, #0
+        	HAL_GPIO_WritePin(ENM3_GPIO_Port, ENM3_Pin, 1);
+ 8000c16:	2201      	movs	r2, #1
  8000c18:	f44f 6100 	mov.w	r1, #2048	; 0x800
  8000c1c:	4845      	ldr	r0, [pc, #276]	; (8000d34 <updateLEDMatrix+0x374>)
  8000c1e:	f000 fc91 	bl	8001544 <HAL_GPIO_WritePin>
-        	HAL_GPIO_WritePin(ENM4_GPIO_Port, ENM4_Pin, 0);
- 8000c22:	2200      	movs	r2, #0
+        	HAL_GPIO_WritePin(ENM4_GPIO_Port, ENM4_Pin, 1);
+ 8000c22:	2201      	movs	r2, #1
  8000c24:	f44f 5180 	mov.w	r1, #4096	; 0x1000
  8000c28:	4842      	ldr	r0, [pc, #264]	; (8000d34 <updateLEDMatrix+0x374>)
  8000c2a:	f000 fc8b 	bl	8001544 <HAL_GPIO_WritePin>
-        	HAL_GPIO_WritePin(ENM5_GPIO_Port, ENM5_Pin, 1);
- 8000c2e:	2201      	movs	r2, #1
+        	HAL_GPIO_WritePin(ENM5_GPIO_Port, ENM5_Pin, 0);
+ 8000c2e:	2200      	movs	r2, #0
  8000c30:	f44f 5100 	mov.w	r1, #8192	; 0x2000
  8000c34:	483f      	ldr	r0, [pc, #252]	; (8000d34 <updateLEDMatrix+0x374>)
  8000c36:	f000 fc85 	bl	8001544 <HAL_GPIO_WritePin>
-        	HAL_GPIO_WritePin(ENM6_GPIO_Port, ENM6_Pin, 0);
- 8000c3a:	2200      	movs	r2, #0
+        	HAL_GPIO_WritePin(ENM6_GPIO_Port, ENM6_Pin, 1);
+ 8000c3a:	2201      	movs	r2, #1
  8000c3c:	f44f 4180 	mov.w	r1, #16384	; 0x4000
  8000c40:	483c      	ldr	r0, [pc, #240]	; (8000d34 <updateLEDMatrix+0x374>)
  8000c42:	f000 fc7f 	bl	8001544 <HAL_GPIO_WritePin>
-        	HAL_GPIO_WritePin(ENM7_GPIO_Port, ENM7_Pin, 0);
- 8000c46:	2200      	movs	r2, #0
+        	HAL_GPIO_WritePin(ENM7_GPIO_Port, ENM7_Pin, 1);
+ 8000c46:	2201      	movs	r2, #1
  8000c48:	2102      	movs	r1, #2
  8000c4a:	483a      	ldr	r0, [pc, #232]	; (8000d34 <updateLEDMatrix+0x374>)
  8000c4c:	f000 fc7a 	bl	8001544 <HAL_GPIO_WritePin>
@@ -1641,43 +1641,43 @@ void updateLEDMatrix(int index){
             break;
  8000c5a:	e066      	b.n	8000d2a <updateLEDMatrix+0x36a>
         case 6:
-        	HAL_GPIO_WritePin(ENM0_GPIO_Port, ENM0_Pin, 0);
- 8000c5c:	2200      	movs	r2, #0
+        	HAL_GPIO_WritePin(ENM0_GPIO_Port, ENM0_Pin, 1);
+ 8000c5c:	2201      	movs	r2, #1
  8000c5e:	2104      	movs	r1, #4
  8000c60:	4834      	ldr	r0, [pc, #208]	; (8000d34 <updateLEDMatrix+0x374>)
  8000c62:	f000 fc6f 	bl	8001544 <HAL_GPIO_WritePin>
-        	HAL_GPIO_WritePin(ENM1_GPIO_Port, ENM1_Pin, 0);
- 8000c66:	2200      	movs	r2, #0
+        	HAL_GPIO_WritePin(ENM1_GPIO_Port, ENM1_Pin, 1);
+ 8000c66:	2201      	movs	r2, #1
  8000c68:	2108      	movs	r1, #8
  8000c6a:	4832      	ldr	r0, [pc, #200]	; (8000d34 <updateLEDMatrix+0x374>)
  8000c6c:	f000 fc6a 	bl	8001544 <HAL_GPIO_WritePin>
-        	HAL_GPIO_WritePin(ENM2_GPIO_Port, ENM2_Pin, 0);
- 8000c70:	2200      	movs	r2, #0
+        	HAL_GPIO_WritePin(ENM2_GPIO_Port, ENM2_Pin, 1);
+ 8000c70:	2201      	movs	r2, #1
  8000c72:	f44f 6180 	mov.w	r1, #1024	; 0x400
  8000c76:	482f      	ldr	r0, [pc, #188]	; (8000d34 <updateLEDMatrix+0x374>)
  8000c78:	f000 fc64 	bl	8001544 <HAL_GPIO_WritePin>
-        	HAL_GPIO_WritePin(ENM3_GPIO_Port, ENM3_Pin, 0);
- 8000c7c:	2200      	movs	r2, #0
+        	HAL_GPIO_WritePin(ENM3_GPIO_Port, ENM3_Pin, 1);
+ 8000c7c:	2201      	movs	r2, #1
  8000c7e:	f44f 6100 	mov.w	r1, #2048	; 0x800
  8000c82:	482c      	ldr	r0, [pc, #176]	; (8000d34 <updateLEDMatrix+0x374>)
  8000c84:	f000 fc5e 	bl	8001544 <HAL_GPIO_WritePin>
-        	HAL_GPIO_WritePin(ENM4_GPIO_Port, ENM4_Pin, 0);
- 8000c88:	2200      	movs	r2, #0
+        	HAL_GPIO_WritePin(ENM4_GPIO_Port, ENM4_Pin, 1);
+ 8000c88:	2201      	movs	r2, #1
  8000c8a:	f44f 5180 	mov.w	r1, #4096	; 0x1000
  8000c8e:	4829      	ldr	r0, [pc, #164]	; (8000d34 <updateLEDMatrix+0x374>)
  8000c90:	f000 fc58 	bl	8001544 <HAL_GPIO_WritePin>
-        	HAL_GPIO_WritePin(ENM5_GPIO_Port, ENM5_Pin, 0);
- 8000c94:	2200      	movs	r2, #0
+        	HAL_GPIO_WritePin(ENM5_GPIO_Port, ENM5_Pin, 1);
+ 8000c94:	2201      	movs	r2, #1
  8000c96:	f44f 5100 	mov.w	r1, #8192	; 0x2000
  8000c9a:	4826      	ldr	r0, [pc, #152]	; (8000d34 <updateLEDMatrix+0x374>)
  8000c9c:	f000 fc52 	bl	8001544 <HAL_GPIO_WritePin>
-        	HAL_GPIO_WritePin(ENM6_GPIO_Port, ENM6_Pin, 1);
- 8000ca0:	2201      	movs	r2, #1
+        	HAL_GPIO_WritePin(ENM6_GPIO_Port, ENM6_Pin, 0);
+ 8000ca0:	2200      	movs	r2, #0
  8000ca2:	f44f 4180 	mov.w	r1, #16384	; 0x4000
  8000ca6:	4823      	ldr	r0, [pc, #140]	; (8000d34 <updateLEDMatrix+0x374>)
  8000ca8:	f000 fc4c 	bl	8001544 <HAL_GPIO_WritePin>
-        	HAL_GPIO_WritePin(ENM7_GPIO_Port, ENM7_Pin, 0);
- 8000cac:	2200      	movs	r2, #0
+        	HAL_GPIO_WritePin(ENM7_GPIO_Port, ENM7_Pin, 1);
+ 8000cac:	2201      	movs	r2, #1
  8000cae:	2102      	movs	r1, #2
  8000cb0:	4820      	ldr	r0, [pc, #128]	; (8000d34 <updateLEDMatrix+0x374>)
  8000cb2:	f000 fc47 	bl	8001544 <HAL_GPIO_WritePin>
@@ -1689,43 +1689,43 @@ void updateLEDMatrix(int index){
             break;
  8000cc0:	e033      	b.n	8000d2a <updateLEDMatrix+0x36a>
         case 7:
-        	HAL_GPIO_WritePin(ENM0_GPIO_Port, ENM0_Pin, 0);
- 8000cc2:	2200      	movs	r2, #0
+        	HAL_GPIO_WritePin(ENM0_GPIO_Port, ENM0_Pin, 1);
+ 8000cc2:	2201      	movs	r2, #1
  8000cc4:	2104      	movs	r1, #4
  8000cc6:	481b      	ldr	r0, [pc, #108]	; (8000d34 <updateLEDMatrix+0x374>)
  8000cc8:	f000 fc3c 	bl	8001544 <HAL_GPIO_WritePin>
-        	HAL_GPIO_WritePin(ENM1_GPIO_Port, ENM1_Pin, 0);
- 8000ccc:	2200      	movs	r2, #0
+        	HAL_GPIO_WritePin(ENM1_GPIO_Port, ENM1_Pin, 1);
+ 8000ccc:	2201      	movs	r2, #1
  8000cce:	2108      	movs	r1, #8
  8000cd0:	4818      	ldr	r0, [pc, #96]	; (8000d34 <updateLEDMatrix+0x374>)
  8000cd2:	f000 fc37 	bl	8001544 <HAL_GPIO_WritePin>
-        	HAL_GPIO_WritePin(ENM2_GPIO_Port, ENM2_Pin, 0);
- 8000cd6:	2200      	movs	r2, #0
+        	HAL_GPIO_WritePin(ENM2_GPIO_Port, ENM2_Pin, 1);
+ 8000cd6:	2201      	movs	r2, #1
  8000cd8:	f44f 6180 	mov.w	r1, #1024	; 0x400
  8000cdc:	4815      	ldr	r0, [pc, #84]	; (8000d34 <updateLEDMatrix+0x374>)
  8000cde:	f000 fc31 	bl	8001544 <HAL_GPIO_WritePin>
-        	HAL_GPIO_WritePin(ENM3_GPIO_Port, ENM3_Pin, 0);
- 8000ce2:	2200      	movs	r2, #0
+        	HAL_GPIO_WritePin(ENM3_GPIO_Port, ENM3_Pin, 1);
+ 8000ce2:	2201      	movs	r2, #1
  8000ce4:	f44f 6100 	mov.w	r1, #2048	; 0x800
  8000ce8:	4812      	ldr	r0, [pc, #72]	; (8000d34 <updateLEDMatrix+0x374>)
  8000cea:	f000 fc2b 	bl	8001544 <HAL_GPIO_WritePin>
-        	HAL_GPIO_WritePin(ENM4_GPIO_Port, ENM4_Pin, 0);
- 8000cee:	2200      	movs	r2, #0
+        	HAL_GPIO_WritePin(ENM4_GPIO_Port, ENM4_Pin, 1);
+ 8000cee:	2201      	movs	r2, #1
  8000cf0:	f44f 5180 	mov.w	r1, #4096	; 0x1000
  8000cf4:	480f      	ldr	r0, [pc, #60]	; (8000d34 <updateLEDMatrix+0x374>)
  8000cf6:	f000 fc25 	bl	8001544 <HAL_GPIO_WritePin>
-        	HAL_GPIO_WritePin(ENM5_GPIO_Port, ENM5_Pin, 0);
- 8000cfa:	2200      	movs	r2, #0
+        	HAL_GPIO_WritePin(ENM5_GPIO_Port, ENM5_Pin, 1);
+ 8000cfa:	2201      	movs	r2, #1
  8000cfc:	f44f 5100 	mov.w	r1, #8192	; 0x2000
  8000d00:	480c      	ldr	r0, [pc, #48]	; (8000d34 <updateLEDMatrix+0x374>)
  8000d02:	f000 fc1f 	bl	8001544 <HAL_GPIO_WritePin>
-        	HAL_GPIO_WritePin(ENM6_GPIO_Port, ENM6_Pin, 0);
- 8000d06:	2200      	movs	r2, #0
+        	HAL_GPIO_WritePin(ENM6_GPIO_Port, ENM6_Pin, 1);
+ 8000d06:	2201      	movs	r2, #1
  8000d08:	f44f 4180 	mov.w	r1, #16384	; 0x4000
  8000d0c:	4809      	ldr	r0, [pc, #36]	; (8000d34 <updateLEDMatrix+0x374>)
  8000d0e:	f000 fc19 	bl	8001544 <HAL_GPIO_WritePin>
-        	HAL_GPIO_WritePin(ENM7_GPIO_Port, ENM7_Pin, 1);
- 8000d12:	2201      	movs	r2, #1
+        	HAL_GPIO_WritePin(ENM7_GPIO_Port, ENM7_Pin, 0);
+ 8000d12:	2200      	movs	r2, #0
  8000d14:	2102      	movs	r1, #2
  8000d16:	4807      	ldr	r0, [pc, #28]	; (8000d34 <updateLEDMatrix+0x374>)
  8000d18:	f000 fc14 	bl	8001544 <HAL_GPIO_WritePin>
